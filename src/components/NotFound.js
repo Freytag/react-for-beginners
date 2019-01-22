@@ -1,9 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-const NotFound = () => (
-    <div className="notfound">
-        NotFound
-    </div>
-);
+const NotFound = () => <div className="notfound">NotFound</div>;
 
 export default NotFound;
