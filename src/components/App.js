@@ -15,10 +15,18 @@ class App extends Component {
   componentDidMount() {
     //sync base
     const { params } = this.props.match;
+    const storedOrder = localStorage.getItem(params.storeId);
     this.ref = base.syncState(`${params.storeId}/fishes`, {
       context: this,
       state: 'fishes'
     });
+    if (storedOrder) {
+      this.setState({ order: JSON.parse(storedOrder) });
+    }
+  }
+
+  componentDidUpdate() {
+    localStorage.setItem(this.props.match.params.storeId, JSON.stringify(this.state.order));
   }
 
   componentWillUnmount() {
@@ -28,6 +36,17 @@ class App extends Component {
 
   loadSampleFishes = () => {
     this.setState({ fishes: sampleFishes });
+  };
+
+  updateFish = (key, updatedFish) => {
+    // 1. copy current state;
+    const fishes = { ...this.state.fishes };
+    // 2. update state
+    fishes[key] = updatedFish;
+    // 3. set new state;
+    this.setState({
+      fishes
+    });
   };
 
   addToOrder = key => {
@@ -64,7 +83,12 @@ class App extends Component {
           </ul>
         </div>
         <Order fishes={this.state.fishes} order={this.state.order} />
-        <Inventory addFish={this.addFish} loadSampleFishes={this.loadSampleFishes} />
+        <Inventory
+          addFish={this.addFish}
+          loadSampleFishes={this.loadSampleFishes}
+          fishes={this.state.fishes}
+          updateFish={this.updateFish}
+        />
       </div>
     );
   }
