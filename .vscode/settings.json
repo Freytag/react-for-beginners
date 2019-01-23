@@ -1,4 +1,5 @@
 {
+  "editor.tabSize": 2,
   // These are all my auto-save configs
   "editor.formatOnSave": true,
   // turn it off for JS
