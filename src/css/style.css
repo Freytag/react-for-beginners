@@ -1,54 +1,56 @@
 .order-enter {
-  -webkit-transform: translateX(-120%);
-          transform: translateX(-120%);
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-  max-height: 0;
+  -webkit-transition: 500ms;
+  transition: 500ms;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+  height: 0;
+  opacity: 0;
   padding: 0 !important;
 }
 .order-enter.order-enter-active {
-  max-height: 60px;
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
-  padding: 2rem 0 !important;
+  height: 60px;
+  opacity: 1;
+  padding: 2rem 0;
 }
 .order-exit {
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: 250ms;
+  transition: 250ms;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
   -webkit-transform: translateX(0);
           transform: translateX(0);
 }
 .order-exit.order-exit-active {
   -webkit-transform: translateX(120%);
           transform: translateX(120%);
-  padding: 0;
+  padding: 0 !important;
 }
 .count-enter {
-  background: #f00;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: 250ms;
+  transition: 250ms;
+  -webkit-transition-timing-function: ease-out;
+          transition-timing-function: ease-out;
   -webkit-transform: translateY(100%);
           transform: translateY(100%);
 }
 .count-enter.count-enter-active {
-  background: #ff0;
   -webkit-transform: translateY(0);
           transform: translateY(0);
 }
 .count-exit {
-  background: #000;
+  -webkit-transition: 250ms;
+  transition: 250ms;
+  -webkit-transition-timing-function: ease-in;
+          transition-timing-function: ease-in;
   -webkit-transform: translateY(0);
           transform: translateY(0);
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
   position: absolute;
   left: 0;
   bottom: 0;
 }
 .count-exit.count-exit-active {
-  background: #008000;
-  -webkit-transform: translateY(-100%) scale(3);
-          transform: translateY(-100%) scale(3);
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
 }
 @font-face {
   font-family: "haymakerregular";
