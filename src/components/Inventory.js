@@ -65,7 +65,11 @@ class Inventory extends Component {
   };
 
   render() {
-    const logout = <button onClick={this.logout}>logout</button>;
+    const logout = (
+      <button className="logout" onClick={this.logout}>
+        logout
+      </button>
+    );
     // 1. check if user is logged in
     if (!this.state.uid) {
       return <Login authenticate={this.authenticate} />;

@@ -57,8 +57,8 @@ header.top
   max-width:1500px
   margin 0 auto
   margin-top 5vh
-  perspective: 1000px;
-  transform-style preserve-3d
+  // perspective: 1000px;
+  // transform-style preserve-3d
   & > *
     flex 1 4 auto
     padding 2rem
@@ -71,40 +71,46 @@ header.top
     &:first-child
       flex-shrink 1 // take 4x the extra room
       flex-basis 50%
-      transform translateX(50%) rotateY(6deg) translateX(-50%)
+      // transform translateX(50%) rotateY(6deg) translateX(-50%)
     &:nth-child(2)
-      transform translateX(-50%) rotateY(-14deg) translateX(50%)
       border-left 0
       border-right 0
       min-width 300px
+      // transform translateX(-50%) rotateY(-14deg) translateX(50%)
     &:last-child
       flex-shrink 1 // take 4x the extra room
       flex-basis 50%
-      transform translateX(-50%) rotateY(10deg) translateX(50%) scale(1.08) translateX(24px)
+      // transform translateX(-50%) rotateY(10deg) translateX(50%) scale(1.08) translateX(24px)
+
+.logout {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+}
 
 // Folding Transforms
 // Take off folding when not checked
-input#fold:not(:checked) ~ #main
-  .catch-of-the-day > *
-      transform none
+// input#fold:not(:checked) ~ #main
+//   .catch-of-the-day > *
+//       transform none
 
-label[for="fold"]
-  position absolute
-  top 1rem
-  left 1rem
-  text-transform uppercase
-  font-size 1.3rem
-  background black
-  color white
-  border 2px solid black
-  cursor pointer
-  padding 0.5rem 1rem
+// label[for="fold"]
+//   position absolute
+//   top 1rem
+//   left 1rem
+//   text-transform uppercase
+//   font-size 1.3rem
+//   background black
+//   color white
+//   border 2px solid black
+//   cursor pointer
+//   padding 0.5rem 1rem
 
-input#fold
-  display none
-  &:checked + label
-    background white
-    color black
+// input#fold
+//   display none
+//   &:checked + label
+//     background white
+//     color black
 
 ul
   list-style none
