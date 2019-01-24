@@ -45,15 +45,15 @@ class Order extends Component {
               </CSSTransition>
             </TransitionGroup>
             lbs {fish.name}
-            {formatPrice(count * fish.price)}
             <button
               onClick={() => {
                 this.props.deleteFromOrder(key);
               }}
             >
-              <span>ⓧ</span>
+              ×
             </button>
           </span>
+          <span className="price">{formatPrice(count * fish.price)}</span>
         </li>
       </CSSTransition>
     );

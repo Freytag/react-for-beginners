@@ -111,6 +111,7 @@ class App extends Component {
         </div>
         <Order fishes={this.state.fishes} order={this.state.order} deleteFromOrder={this.deleteFromOrder} />
         <Inventory
+          storeId={this.props.match.params.storeId}
           addFish={this.addFish}
           updateFish={this.updateFish}
           deleteFish={this.deleteFish}
