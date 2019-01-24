@@ -370,6 +370,11 @@ header.top h3:after {
   top: 2rem;
   right: 2rem;
 }
+.loadsample {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+}
 ul {
   list-style: none;
   margin: 0;

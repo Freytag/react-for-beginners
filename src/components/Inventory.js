@@ -84,6 +84,11 @@ class Inventory extends Component {
     return (
       <div className="inventory">
         <h2>Inventory</h2>
+        {this.props.fishes && Object.keys(this.props.fishes).length === 0 ? (
+          <button className="loadsample" onClick={this.props.loadSampleFishes}>
+            Load Sample Fishes
+          </button>
+        ) : null}
         {logout}
         {Object.keys(this.props.fishes).map(key => (
           <EditFishForm
@@ -95,7 +100,6 @@ class Inventory extends Component {
           />
         ))}
         <AddFishForm addFish={this.props.addFish} />
-        <button onClick={this.props.loadSampleFishes}>Load Sample Fishes</button>
       </div>
     );
   }
