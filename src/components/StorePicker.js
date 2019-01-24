@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { getFunName } from '../helpers';
 
 class StorePicker extends React.Component {
@@ -7,6 +8,11 @@ class StorePicker extends React.Component {
   //   super();
   //   this.handleSubmit = this.handleSubmit.bind(this);
   // }
+
+  static propTypes = {
+    history: PropTypes.string
+  };
+
   storeNameInput = React.createRef();
 
   handleSubmit = e => {
@@ -22,13 +28,7 @@ class StorePicker extends React.Component {
     return (
       <form className="store-selector" onSubmit={this.handleSubmit}>
         <h2>Please Enter A Store</h2>
-        <input
-          ref={this.storeNameInput}
-          type="text"
-          required
-          placeholder="Store Name"
-          defaultValue={getFunName()}
-        />
+        <input ref={this.storeNameInput} type="text" required placeholder="Store Name" defaultValue={getFunName()} />
         <button type="submit">Visit Store →</button>
       </form>
     );
