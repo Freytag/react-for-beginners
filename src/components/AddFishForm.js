@@ -3,13 +3,9 @@ import PropTypes from 'prop-types';
 
 class AddFishForm extends Component {
   nameRef = React.createRef();
-
   priceRef = React.createRef();
-
   statusRef = React.createRef();
-
   descRef = React.createRef();
-
   imageRef = React.createRef();
 
   static propTypes = {
