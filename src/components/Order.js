@@ -31,7 +31,7 @@ class Order extends Component {
     if (!isAvailable) {
       return (
         <CSSTransition {...transitionOptions}>
-          <li key={key}>Sorry {fish ? fish.name : 'fish'} is nolonger available</li>
+          <li key={key}>Sorry {fish ? fish.name : 'fish'} is no longer available</li>
         </CSSTransition>
       );
     }
@@ -71,6 +71,7 @@ class Order extends Component {
         return t;
       }
     }, 0);
+
     return (
       <div className="order-wrap">
         <h2>Order</h2>

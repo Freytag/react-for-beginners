@@ -3,13 +3,9 @@ import PropTypes from 'prop-types';
 
 class AddFishForm extends Component {
   nameRef = React.createRef();
-
   priceRef = React.createRef();
-
   statusRef = React.createRef();
-
   descRef = React.createRef();
-
   imageRef = React.createRef();
 
   static propTypes = {
@@ -19,7 +15,7 @@ class AddFishForm extends Component {
   createFish = e => {
     // 1.stop form from submitting
     e.preventDefault();
-    // 2.Put infor into State
+    // 2.Put info into State
     const fish = {
       name: this.nameRef.current.value,
       price: parseFloat(this.priceRef.current.value),
